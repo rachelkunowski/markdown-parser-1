@@ -15,8 +15,8 @@ public class MarkdownParseTest {
     }
 
     @Test
-    public void testLinks() throws IOException {
-        Path fileName = Path.of("test-file.md");
+    public void testLinksTestFile() throws IOException {
+        Path fileName = Path.of("/Users/rachelkunowski/Documents/GitHub/markdown-parser-1/test-file.md");
         String content = Files.readString(fileName);
         ArrayList<String> links = MarkdownParse.getLinks(content);
         ArrayList<String> testLinks = new ArrayList<>();
@@ -25,4 +25,14 @@ public class MarkdownParseTest {
         assertEquals(testLinks, links);
     }
 
+    @Test
+    public void testLinksTestFile2() throws IOException {
+        Path fileName = Path.of("/Users/rachelkunowski/Documents/GitHub/markdown-parser-1/test-file2.md");
+        String content = Files.readString(fileName);
+        ArrayList<String> links = MarkdownParse.getLinks(content);
+        ArrayList<String> testLinks = new ArrayList<>();
+        testLinks.add("https://google.com");
+        testLinks.add("some-thing.html");
+        assertEquals(testLinks, links);
+    }
  }
