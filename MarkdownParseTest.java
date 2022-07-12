@@ -15,7 +15,7 @@ public class MarkdownParseTest {
     }
 
     @Test
-    public void testLinksTestFile() throws IOException {
+    public void testLinksTestFile() throws InterruptedException, IOException {
         Path fileName = Path.of("/Users/rachelkunowski/Documents/GitHub/markdown-parser-1/test-file.md");
         String content = Files.readString(fileName);
         ArrayList<String> links = MarkdownParse.getLinks(content);
@@ -26,7 +26,7 @@ public class MarkdownParseTest {
     }
 
     @Test
-    public void testLinksTestFile2() throws IOException {
+    public void testLinksTestFile2() throws InterruptedException, IOException {
         Path fileName = Path.of("/Users/rachelkunowski/Documents/GitHub/markdown-parser-1/test-file2.md");
         String content = Files.readString(fileName);
         ArrayList<String> links = MarkdownParse.getLinks(content);
