@@ -35,4 +35,14 @@ public class MarkdownParseTest {
         testLinks.add("some-thing.html");
         assertEquals(testLinks, links);
     }
+
+    @Test
+    public void testLinksTestFile9() throws InterruptedException, IOException {
+        Path fileName = Path.of("test-file9.md");
+        String content = Files.readString(fileName);
+        ArrayList<String> links = MarkdownParse.getLinks(content);
+        ArrayList<String> testLinks = new ArrayList<>();
+        testLinks.add("https://google.com");
+        assertEquals(testLinks, links);
+    }
  }
